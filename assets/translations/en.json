@@ -1,0 +1,14 @@
+{
+	"login": {
+		"title": "Login"
+	},
+	"register": {
+		"title": "Register"
+	},
+	"changeLanguage": "Change Language",
+	"email": "Email",
+	"name": "Name",
+	"lastName": "Last Name",
+	"submit": "Submit",
+	"password": "Password"
+}

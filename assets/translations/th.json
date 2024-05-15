@@ -1,0 +1,15 @@
+{
+	"login": {
+		"title": "ล๊อคอิน"
+	},
+	"register": {
+		"title": "สมัครสมาชิก"
+	},
+	"changeLanguage": "เปลี่ยนภาษา",
+	"email": "อีเมล",
+	"name": "ชื่อ",
+	"lastName": "นามสกุล",
+	"submit": "ยืนยัน",
+	"password": "รหัสผ่าน"
+
+}
