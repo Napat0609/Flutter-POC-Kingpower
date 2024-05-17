@@ -1,0 +1,42 @@
+{
+	"login": {
+		"title": "Login"
+	},
+	"register": {
+		"title": "Register"
+	},
+	"changeLanguage": "Change Language",
+	"email": "Email",
+	"name": "Name",
+	"lastName": "Last Name",
+	"submit": "Submit",
+	"password": "Password",
+	"commonCustomCurrency": "Your balance is {amount}",
+	"@commonCustomCurrency": {
+		"placeholders": {
+			"amount": {
+				"type": "double",
+				"format": "currency",
+				"example": "$1000.00",
+				"description": "Account balance",
+				"optionalParameters": {
+					"decimalDigits": 2,
+					"name": "USD",
+					"symbol": "$",
+					"customPattern": "¤#0.00"
+				}
+			}
+		}
+	},
+	"commonCustomDateFormat": "display Date and Time: {date}",
+	"@commonCustomDateFormat": {
+		"placeholders": {
+			"date": {
+				"type": "DateTime",
+				"format": "EEE, M/d/y",
+				"isCustomDateFormat": "true"
+			}
+		}
+	},
+	"itemCount": "{count, plural, =0 {No items} =1 {One item} other {{count} items}}"
+}

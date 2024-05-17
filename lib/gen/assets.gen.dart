@@ -10,14 +10,20 @@
 class $AssetsTranslationsGen {
   const $AssetsTranslationsGen();
 
+  /// File path: assets/translations/en-backup.arb
+  String get enBackup => 'assets/translations/en-backup.arb';
+
   /// File path: assets/translations/en.json
   String get en => 'assets/translations/en.json';
+
+  /// File path: assets/translations/th-backup.arb
+  String get thBackup => 'assets/translations/th-backup.arb';
 
   /// File path: assets/translations/th.json
   String get th => 'assets/translations/th.json';
 
   /// List of all assets
-  List<String> get values => [en, th];
+  List<String> get values => [enBackup, en, thBackup, th];
 }
 
 class Assets {

@@ -1,4 +1,5 @@
 import 'package:poc_kingpower/core/error/failure.dart';
+import 'package:poc_kingpower/core/usecase/usecase.dart';
 import 'package:poc_kingpower/feature/authentication/data/dto/request/authentication_request.dart';
 import 'package:poc_kingpower/feature/authentication/data/respository/authentication_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -26,52 +27,28 @@ class AuthenticationService {
   Future<Result<bool, Failure>> createUser(
     AuthenticationRequest request,
   ) async {
-    try {
-      final result = await authenticationRepository.createUser(request);
+      final result = await CallApi.execute<Future<bool>, bool>(
+       authenticationRepository.createUser(request),
+      );
 
-      return Success(result);
-    } on PostgrestException catch (e) {
-      return Error(
-        Failure(message: e.message),
-      );
-    } on AuthException catch (e) {
-      return Error(
-        Failure(message: e.message),
-      );
-    }
+      return result;
   }
 
   Future<Result<bool, Failure>> loginUser(
     AuthenticationRequest request,
   ) async {
-    try {
-      final result = await authenticationRepository.loginUser(request);
+      final result = await  CallApi.execute<Future<bool>, bool>(
+        authenticationRepository.loginUser(request),
+      );
 
-      return Success(result);
-    } on PostgrestException catch (e) {
-      return Error(
-        Failure(message: e.message),
-      );
-    } on AuthException catch (e) {
-      return Error(
-        Failure(message: e.message),
-      );
-    }
+      return result;
   }
 
   Future<Result<bool, Failure>> logout() async {
-    try {
-      final result = await authenticationRepository.logout();
+    final result = await  CallApi.execute<Future<bool>, bool>(
+        authenticationRepository.logout(),
+      );
 
-      return Success(result);
-    } on PostgrestException catch (e) {
-      return Error(
-        Failure(message: e.message),
-      );
-    } on AuthException catch (e) {
-      return Error(
-        Failure(message: e.message),
-      );
-    }
+    return result;
   }
 }

@@ -72,16 +72,10 @@ class AuthenticationController extends _$AuthenticationController {
     _onLoader();
     bool isSuccess = false;
     final formField = state.formField;
-
     final email = formField?.fields['email']?.value;
     final password = formField?.fields['password']?.value;
     final name = formField?.fields['name']?.value;
     final lastName = formField?.fields['lastName']?.value;
-
-    print(email);
-    print(password);
-    print(name);
-    print(lastName);
 
     final result = await ref.read(authenticationServiceProvider).createUser(
           AuthenticationRequest(

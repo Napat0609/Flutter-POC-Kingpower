@@ -10,5 +10,11 @@
 	"name": "Name",
 	"lastName": "Last Name",
 	"submit": "Submit",
-	"password": "Password"
+	"password": "Password",
+	"money": {
+		"zero": "You have no money",
+		"one": "You are poor",
+		"many": "You are a pretty rich",
+		"other": "You have {} dollars"
+	}
 }

@@ -1,5 +1,6 @@
 import 'package:multiple_result/multiple_result.dart';
 import 'package:poc_kingpower/core/error/failure.dart';
+import 'package:poc_kingpower/core/usecase/usecase.dart';
 import 'package:poc_kingpower/feature/account/data/dto/response/account_response.dart';
 import 'package:poc_kingpower/feature/account/data/repository/account_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -22,18 +23,10 @@ class AccountService {
   );
 
   Future<Result<AccountResponse?, Failure>> getUserProfile() async {
-    try {
-      final result = await accountRepository.getUserProfile();
+    final result = await CallApi.execute<Future<AccountResponse?>, AccountResponse>(
+      accountRepository.getUserProfile(),
+    );
 
-      return Success(result);
-    } on PostgrestException catch (e) {
-      return Error(
-        Failure(message: e.message),
-      );
-    } on AuthException catch (e) {
-      return Error(
-        Failure(message: e.message),
-      );
-    }
+    return result;
   }
 }

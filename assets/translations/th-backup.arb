@@ -1,0 +1,42 @@
+{
+	"login": {
+		"title": "ล๊อคอิน"
+	},
+	"register": {
+		"title": "สมัครสมาชิก"
+	},
+	"changeLanguage": "เปลี่ยนภาษา",
+	"email": "อีเมล",
+	"name": "ชื่อ",
+	"lastName": "นามสกุล",
+	"submit": "ยืนยัน",
+	"password": "รหัสผ่าน",
+	"commonCustomCurrency": "เงินในบัญชี {amount}",
+	"@commonCustomCurrency": {
+		"placeholders": {
+			"amount": {
+				"type": "double",
+				"format": "currency",
+				"example": "$1000.00",
+				"description": "Account balance",
+				"optionalParameters": {
+					"decimalDigits": 2,
+					"name": "USD",
+					"symbol": "$",
+					"customPattern": "¤#0.00"
+				}
+			}
+		}
+	},
+	"commonCustomDateFormat": "แสดงวันและเวลา: {date}",
+	"@commonCustomDateFormat": {
+		"placeholders": {
+			"date": {
+				"type": "DateTime",
+				"format": "EEE, M/d/y",
+				"isCustomDateFormat": "true"
+			}
+		}
+	},
+	"itemCount": "{count, plural, =0 {No items} =1 {One item} other {{count} items}}"
+}
