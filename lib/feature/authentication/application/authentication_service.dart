@@ -27,28 +27,34 @@ class AuthenticationService {
   Future<Result<bool, Failure>> createUser(
     AuthenticationRequest request,
   ) async {
-      final result = await CallApi.execute<Future<bool>, bool>(
-       authenticationRepository.createUser(request),
-      );
+    final result = await CallApi.execute<Future<bool>, bool>(
+      authenticationRepository.createUser(request),
+    );
 
-      return result;
+    return result;
   }
 
   Future<Result<bool, Failure>> loginUser(
     AuthenticationRequest request,
   ) async {
-      final result = await  CallApi.execute<Future<bool>, bool>(
-        authenticationRepository.loginUser(request),
-      );
+    final result = await CallApi.execute<Future<bool>, bool>(
+      authenticationRepository.loginUser(request),
+    );
 
-      return result;
+    return result;
   }
 
   Future<Result<bool, Failure>> logout() async {
-    final result = await  CallApi.execute<Future<bool>, bool>(
-        authenticationRepository.logout(),
-      );
+    final result = await CallApi.execute<Future<bool>, bool>(
+      authenticationRepository.logout(),
+    );
 
     return result;
+  }
+
+  void getPdf() {
+    CallApi.execute<void, void>(
+      authenticationRepository.getPdf(),
+    );
   }
 }

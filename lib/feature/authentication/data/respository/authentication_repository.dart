@@ -1,7 +1,10 @@
 import 'dart:io';
+import 'dart:math';
 
+import 'package:path_provider/path_provider.dart';
 import 'package:poc_kingpower/core/remote/supabase_provider.dart';
 import 'package:poc_kingpower/feature/authentication/data/dto/request/authentication_request.dart';
+import 'package:poc_kingpower/feature/authentication/data/service/stream_service_api.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -12,15 +15,18 @@ AuthenticationRepository authenticationRepository(
   AuthenticationRepositoryRef ref,
 ) {
   final supabaseClient = ref.watch(supabaseClientProvider);
+  final streamServiceApi = ref.watch(streamServiceApiProvider);
 
-  return AuthenticationRepository(supabaseClient);
+  return AuthenticationRepository(supabaseClient, streamServiceApi);
 }
 
 class AuthenticationRepository {
   final SupabaseClient supabaseClient;
+  final StreamServiceApi streamServiceApi;
 
   AuthenticationRepository(
     this.supabaseClient,
+    this.streamServiceApi,
   );
 
   SupabaseQueryBuilder get _userProfileTable => supabaseClient.from(
@@ -72,5 +78,21 @@ class AuthenticationRepository {
     await supabaseClient.auth.signOut();
 
     return true;
+  }
+
+  void getPdf() async {
+    final result = await streamServiceApi.getPdf();
+
+    final _path = await getApplicationDocumentsDirectory();
+
+    final file = File(
+      '${(_path).path}/sys_${Random().nextInt(100)}_${DateTime.now()}.pdf',
+    );
+    if (!file.existsSync()) {
+      file.createSync(recursive: true);
+    }
+
+    // Write the response bytes to the file
+    await file.writeAsBytes(result, flush: true);
   }
 }

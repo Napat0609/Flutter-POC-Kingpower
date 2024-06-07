@@ -129,10 +129,23 @@ class _SignInScreenState extends ConsumerState<SignInScreen>
                       context.goNamed(signUpRoute);
                     },
                   ),
-                    SizedBox(
+                  SizedBox(
                     height: 16.h,
                   ),
-                  const Text('money').plural(100, format: NumberFormat.compact(locale: context.locale.toString(),),),
+                  const Text('money').plural(
+                    100,
+                    format: NumberFormat.compact(
+                      locale: context.locale.toString(),
+                    ),
+                  ),
+                  BaseButtonWidget(
+                    txt: 'Download PDF',
+                    onTap: () {
+                      ref
+                          .read(authenticationControllerProvider.notifier)
+                          .onGetPDF();
+                    },
+                  ),
                 ],
               ),
             ),

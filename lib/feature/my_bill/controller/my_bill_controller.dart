@@ -3,15 +3,16 @@ import 'package:poc_kingpower/core/loader/loader_controller.dart';
 import 'package:poc_kingpower/feature/authentication/application/authentication_service.dart';
 import 'package:poc_kingpower/feature/authentication/controller/state/authentication_state.dart';
 import 'package:poc_kingpower/feature/authentication/data/dto/request/authentication_request.dart';
+import 'package:poc_kingpower/feature/my_bill/controller/state/my_bill_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'authentication_controller.g.dart';
+part 'my_bill_controller.g.dart';
 
 @Riverpod(keepAlive: true)
-class AuthenticationController extends _$AuthenticationController {
+class MyBillController extends _$MyBillController {
   @override
-  AuthenticationState build() {
-    return const AuthenticationState();
+  MyBillState build() {
+    return const MyBillState();
   }
 
   void _onLoader() {
@@ -95,9 +96,5 @@ class AuthenticationController extends _$AuthenticationController {
     );
 
     return isSuccess;
-  }
-
-  void onGetPDF() {
-    ref.read(authenticationServiceProvider).getPdf();
   }
 }

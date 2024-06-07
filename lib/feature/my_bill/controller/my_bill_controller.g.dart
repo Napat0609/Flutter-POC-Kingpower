@@ -1,27 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'authentication_controller.dart';
+part of 'my_bill_controller.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authenticationControllerHash() =>
-    r'301f84b9265a78ad9ecc76bba9e41a2f0a9201d8';
+String _$myBillControllerHash() => r'63f953f314006415d7ac999523d8a70f35969ccb';
 
-/// See also [AuthenticationController].
-@ProviderFor(AuthenticationController)
-final authenticationControllerProvider =
-    NotifierProvider<AuthenticationController, AuthenticationState>.internal(
-  AuthenticationController.new,
-  name: r'authenticationControllerProvider',
+/// See also [MyBillController].
+@ProviderFor(MyBillController)
+final myBillControllerProvider =
+    NotifierProvider<MyBillController, MyBillState>.internal(
+  MyBillController.new,
+  name: r'myBillControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$authenticationControllerHash,
+      : _$myBillControllerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$AuthenticationController = Notifier<AuthenticationState>;
+typedef _$MyBillController = Notifier<MyBillState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

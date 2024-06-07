@@ -1,27 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'authentication_controller.dart';
+part of 'my_bill_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authenticationControllerHash() =>
-    r'301f84b9265a78ad9ecc76bba9e41a2f0a9201d8';
+String _$myBillRepositoryHash() => r'8ca3bb6a9741a785674b545a8d4d1fbdccda9073';
 
-/// See also [AuthenticationController].
-@ProviderFor(AuthenticationController)
-final authenticationControllerProvider =
-    NotifierProvider<AuthenticationController, AuthenticationState>.internal(
-  AuthenticationController.new,
-  name: r'authenticationControllerProvider',
+/// See also [myBillRepository].
+@ProviderFor(myBillRepository)
+final myBillRepositoryProvider = AutoDisposeProvider<MyBillRepository>.internal(
+  myBillRepository,
+  name: r'myBillRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$authenticationControllerHash,
+      : _$myBillRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$AuthenticationController = Notifier<AuthenticationState>;
+typedef MyBillRepositoryRef = AutoDisposeProviderRef<MyBillRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
